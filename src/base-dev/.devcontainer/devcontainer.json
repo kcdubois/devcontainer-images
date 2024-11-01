@@ -1,0 +1,25 @@
+{
+  "name": "base-dev",
+  "image": "ubuntu:noble",
+  "mounts": [
+    {
+      "source": "${localEnv:HOME}/code/dotfiles/xdg_config",
+      "target": "/home/dev/.config",
+      "type": "bind"
+    }
+  ],
+  "remoteUser": "dev",
+  "features": {
+    "ghcr.io/devcontainers/features/common-utils:2": {
+      "installZsh": true,
+      "configureZshAsDefaultShell": true,
+      "username": "dev"
+    },
+    "ghcr.io/devcontainers/features/docker-outside-of-docker:1": {},
+    "ghcr.io/devcontainers/features/git:1": {},
+    "ghcr.io/duduribeiro/devcontainer-features/neovim:1": {
+      "version": "nightly"
+    },
+    "ghcr.io/devcontainers-contrib/features/tmux-apt-get:1": {}
+  }
+}
